@@ -2,7 +2,7 @@
 using UnityEngine;
 using System;
 
-public class PoolHandler : MonoBehaviour
+public class PoolHandler : Singleton<PoolHandler>
 {
     //Allows you to have any number of pools with its own key
     Dictionary<string, List<GameObject>> mPools = new Dictionary<string, List<GameObject>>();
@@ -129,6 +129,38 @@ public class PoolHandler : MonoBehaviour
 
         return null;
     }
+    public GameObject SpawnElementFromPool(string name, bool checkDuplicates = false)
+    {
+        if (mPools.ContainsKey(name))
+        {
+            List<GameObject> pool = mPools[name];
+            GameObject poolItem = null;
+
+            if (checkDuplicates)
+            {
+                poolItem = GetActiveInPool(name);
+                if (poolItem != null)
+                {
+                    return poolItem;
+                }
+            }
+
+            poolItem = pool.Find(e => !e.activeInHierarchy);
+
+            if (poolItem == null)
+            {
+                poolItem = Instantiate(pool[0], pPoolParent, true);
+                poolItem.SetActive(true);
+                pool.Add(poolItem);
+                mPools[name] = pool;
+                poolItem.name = poolItem.name + pool.Count;
+            }
+
+            return poolItem;
+        }
+
+        return null;
+    }
 
     public bool PoolExists(string name)
     {
@@ -140,6 +172,16 @@ public class PoolHandler : MonoBehaviour
         if (mPools.ContainsKey(poolName))
         {
             return mPools[poolName].Find(e => e.activeInHierarchy && e.name.Equals(itemName));
+        }
+
+        return null;
+    }
+
+    GameObject GetActiveInPool(string poolName)
+    {
+        if (mPools.ContainsKey(poolName))
+        {
+            return mPools[poolName].Find(e => e.activeInHierarchy);
         }
 
         return null;
