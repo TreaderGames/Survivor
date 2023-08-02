@@ -67,7 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTemplate: {fileID: 2456745868622269764, guid: 1964e706051d7e747a87641f33ff1492, type: 3}
   enemyStaticTemplate: {fileID: 2456745868622269764, guid: 54c0d920abc72384eafc07b0fe4928e2, type: 3}
-  ground: {fileID: 0}
+  worldInfo: {fileID: 0}
   spawnMovingCount: 5
   spawnStaticCount: 3
 --- !u!114 &6752661643926938528

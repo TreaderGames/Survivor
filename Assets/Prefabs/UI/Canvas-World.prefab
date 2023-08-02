@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2981436575802139625}
   - component: {fileID: 2981436575802139624}
   - component: {fileID: 2981436575802139631}
+  - component: {fileID: 5224305847552092338}
   m_Layer: 5
   m_Name: Canvas-World
   m_TagString: Untagged
@@ -181,6 +182,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5224305847552092338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981436575802139630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0ead64146b48546adfb1344b5f1fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground: {fileID: 2981436574396388110}
 --- !u!1001 &3712173153295999523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,17 +203,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 2981436575802139626}
     m_Modifications:
     - target: {fileID: 1937806868016804572, guid: 05af1aa335d9e474a81644bd498a0b2d, type: 3}
-      propertyPath: ground
+      propertyPath: worldInfo
       value: 
-      objectReference: {fileID: 2981436574396388110}
-    - target: {fileID: 1937806868016804572, guid: 05af1aa335d9e474a81644bd498a0b2d, type: 3}
-      propertyPath: enemyTemplate
-      value: 
-      objectReference: {fileID: 2456745868622269764, guid: 1964e706051d7e747a87641f33ff1492, type: 3}
-    - target: {fileID: 3712173152757991830, guid: 05af1aa335d9e474a81644bd498a0b2d, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5224305847552092338}
     - target: {fileID: 4479750170081096206, guid: 05af1aa335d9e474a81644bd498a0b2d, type: 3}
       propertyPath: m_Name
       value: EnemyHandler
@@ -402,6 +408,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8822303031162387443, guid: 06cfbe503a3c5014ba9897e92584019a, type: 3}
+      propertyPath: worldInfo
+      value: 
+      objectReference: {fileID: 5224305847552092338}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cfbe503a3c5014ba9897e92584019a, type: 3}
 --- !u!224 &2981436574701900060 stripped
