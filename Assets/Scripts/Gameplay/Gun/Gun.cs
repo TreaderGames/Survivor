@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
     #region Unity
     private void Awake()
     {
-        playerTransform = FindObjectOfType<PlayerController>().transform;
+        playerTransform = FindObjectOfType<PlayerBase>().transform;
     }
 
     private void Start()
