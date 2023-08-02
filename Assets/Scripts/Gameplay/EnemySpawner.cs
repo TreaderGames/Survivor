@@ -1,32 +1,20 @@
-using System.Collections;
-using UnityEngine.UI;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] Transform enemyTemplate;
+    [SerializeField] EnemyBase enemyTemplate;
     [SerializeField] RectTransform ground;
     [SerializeField] int spawnMovingCount = 5;
 
-    #region Unity
-    // Start is called before the first frame update
-    void Start()
-    {
-        SpawnEnemies();
-    }
+    List<EnemyBase> movingEnemies = new List<EnemyBase>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    #endregion
 
-    #region Private
+    #region Public
 
-    private void SpawnEnemies()
+    public List<EnemyBase> SpawnEnemies()
     {
-        Transform currentEnemy;
+        EnemyBase currentEnemy;
         Vector3 boundsMin = new Vector3(ground.rect.xMin, ground.rect.yMin, 0);
         Vector3 boundsMax = new Vector3(ground.rect.xMax, ground.rect.yMax, 0);
         Vector3 randomPos = new Vector3();
@@ -38,9 +26,11 @@ public class EnemySpawner : MonoBehaviour
             randomPos.x = Random.Range(boundsMin.x, boundsMax.x);
             randomPos.y = Random.Range(boundsMin.y, boundsMax.y);
 
-            currentEnemy.localPosition = randomPos;
+            currentEnemy.transform.localPosition = randomPos;
+            movingEnemies.Add(currentEnemy);
         }
-    }
 
+        return movingEnemies;
+    }
     #endregion
 }
