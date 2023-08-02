@@ -18,6 +18,9 @@ public class UIWorldInfo : MonoBehaviour
     {
         boundsMin = new Vector3(ground.rect.xMin, ground.rect.yMin, 0);
         boundsMax = new Vector3(ground.rect.xMax, ground.rect.yMax, 0);
+
+        boundsMin += ground.localPosition;
+        boundsMax += ground.localPosition;
     }
     #endregion
 }

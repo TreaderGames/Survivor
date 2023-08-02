@@ -11,7 +11,7 @@ public class PlayerBase : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerHealthController.Instance.RemoveListener(HandleHealthUpdated);
+        PlayerHealthController.Instance?.RemoveListener(HandleHealthUpdated);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
