@@ -8,6 +8,8 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
     private Action<int> callbackHealthUpdated;
     private int currentHealth;
 
+    public int pPlayerHealth { get => playerHealth; }
+
     //public int pCurrentHealth { get; private set; }
 
     #region Unity

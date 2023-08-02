@@ -125,7 +125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5938}
+  m_AnchoredPosition: {x: 0, y: -62.59375}
   m_SizeDelta: {x: 0, y: 125.1875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4268487731467744707
@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 553246217380042087}
   - component: {fileID: 4048218995736031963}
   - component: {fileID: 443499455816950505}
+  - component: {fileID: 3549314067563581408}
   m_Layer: 5
   m_Name: Canvas-Info
   m_TagString: Untagged
@@ -363,7 +364,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &443499455816950505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +382,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3549314067563581408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777096468357890443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625365abac6f9634c9992ad378d2c833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 8908783464937584439}
 --- !u!1 &7364624591865256408
 GameObject:
   m_ObjectHideFlags: 0
