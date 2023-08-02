@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -12,7 +10,16 @@ public class Bullet : MonoBehaviour
     {
         DoMove();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals(GameTags.PLAYER_TAG))
+        {
+            currentDelta = GameConfig.bulletLife;
+        }
+    }
     #endregion
+
     #region Public
     public void Fire(Vector3 direction, Vector3 startingPos)
     {
