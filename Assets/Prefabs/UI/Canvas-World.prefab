@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: ground
       value: 
       objectReference: {fileID: 2981436574396388110}
+    - target: {fileID: 1937806868016804572, guid: 05af1aa335d9e474a81644bd498a0b2d, type: 3}
+      propertyPath: enemyTemplate
+      value: 
+      objectReference: {fileID: 2456745868622269764, guid: 1964e706051d7e747a87641f33ff1492, type: 3}
     - target: {fileID: 3712173152757991830, guid: 05af1aa335d9e474a81644bd498a0b2d, type: 3}
       propertyPath: m_IsTrigger
       value: 1

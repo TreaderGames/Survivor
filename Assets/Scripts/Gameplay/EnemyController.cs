@@ -12,7 +12,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movingEnemies = enemySpawner.SpawnEnemies();
+        enemySpawner.SpawnStaticEnemies();
+        movingEnemies = enemySpawner.SpawnMovingEnemies();
         enemyMovement.StartMoving(movingEnemies);
     }
     #endregion
