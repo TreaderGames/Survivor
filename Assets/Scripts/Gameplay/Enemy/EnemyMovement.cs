@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     List<EnemyBase> movingEnemies = new List<EnemyBase>();
 
     #region Unity
-    private void Update()
+    private void LateUpdate()
     {
         if(movingEnemies.Count > 0)
         {

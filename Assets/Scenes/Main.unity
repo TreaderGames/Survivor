@@ -191,6 +191,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &91691311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3993783417936204581, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
+  m_PrefabInstance: {fileID: 2981436575877370108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +450,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2047010943209182905, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2981436575802139625, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
       propertyPath: m_Camera
       value: 
@@ -535,5 +550,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas-World
       objectReference: {fileID: 0}
+    - target: {fileID: 5108035029792741386, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
+      propertyPath: fixedJoystick
+      value: 
+      objectReference: {fileID: 91691311}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
