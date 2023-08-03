@@ -26,7 +26,7 @@ public class EnemyBase : MonoBehaviour
     {
         if (collision.CompareTag(GameTags.PLAYER_TAG))
         {
-            Debug.Log("Touching player");
+            //Debug.Log("Touching player");
             isTouchingPlayer = true;
         }
         if (collision.CompareTag(GameTags.BULLT_TAG) && collision.GetComponent<Bullet>().pBulletTarget.Equals(Bullet.BulletTarget.Enemy))
@@ -39,7 +39,7 @@ public class EnemyBase : MonoBehaviour
     {
         if (collision.CompareTag(GameTags.PLAYER_TAG))
         {
-            Debug.Log("Player moved away");
+            //Debug.Log("Player moved away");
             isTouchingPlayer = false;
         }
     }
