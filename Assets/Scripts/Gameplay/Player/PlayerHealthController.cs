@@ -38,22 +38,23 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
     #region Public
     public void HitByBullet()
     {
+        int health;
         currentHealth--; 
         currentHealth = Mathf.Max(currentHealth, 0);
+        health = currentHealth;
         currentDelta = 0;
-        Debug.Log("Player health: " + currentHealth);
-        callbackHealthUpdated?.Invoke(currentHealth);
+        //Debug.Log("Player health: " + currentHealth);
         if (currentHealth == 0)
         {
             HandlePlayerDeath();
         }
+        callbackHealthUpdated?.Invoke(health);
     }
 
     public void UpdateEnemyContract(bool enter)
     {
         if(enter)
         {
-            Debug.Log("cp3");
             enemyContactCount++;
             //UpdateEnemyContactHealth();
         }
@@ -85,7 +86,7 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
 
     private void UpdateEnemyContactHealth()
     {
-        Debug.LogError("Enemy Contact Count: " + enemyContactCount);
+        //Debug.Log("Enemy Contact Count: " + enemyContactCount);
         currentHealth = currentHealth - enemyContactCount;
         currentHealth = Mathf.Max(currentHealth, 0);
         callbackHealthUpdated?.Invoke(currentHealth);

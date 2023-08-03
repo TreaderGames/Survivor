@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinSpawner : Singleton<CoinSpawner>
+public class CoinSpawner : Singleton<CoinSpawner>, IReset
 {
     [SerializeField] Coin coinTemplate;
 
     Action onCoinCollected;
     Queue<Coin> inactiveCoins = new Queue<Coin>();
+    List<Coin> activeCoins = new List<Coin>();
 
     #region Public
     public void SpawnCoin(Vector3 position)
@@ -24,6 +25,7 @@ public class CoinSpawner : Singleton<CoinSpawner>
         }
 
         coin.transform.localPosition = position;
+        activeCoins.Add(coin);
         coin.gameObject.SetActive(true);
     }
 
@@ -36,12 +38,23 @@ public class CoinSpawner : Singleton<CoinSpawner>
     {
         onCoinCollected -= action;
     }
+
+    public void DoReset()
+    {
+        for (int i = 0; i < activeCoins.Count; i++)
+        {
+            activeCoins[i].gameObject.SetActive(false);
+        }
+
+        activeCoins.Clear();
+    }
     #endregion
 
     #region Callback
     private void  HandleCoinCollected(Coin coin)
     {
         inactiveCoins.Enqueue(coin);
+        activeCoins.Remove(coin);
         onCoinCollected?.Invoke();
     }
     #endregion

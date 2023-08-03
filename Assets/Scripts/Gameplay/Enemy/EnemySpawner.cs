@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour, IReset
 {
     [SerializeField] EnemyBase enemyTemplate;
     [SerializeField] EnemyBase enemyStaticTemplate;
@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] int spawnStaticCount = 3;
 
     List<EnemyBase> movingEnemies = new List<EnemyBase>();
+    List<EnemyBase> staticEnemies = new List<EnemyBase>();
 
     #region Public
 
@@ -45,6 +46,20 @@ public class EnemySpawner : MonoBehaviour
 
             currentEnemy.AddEnemyDefeatedListener(HandleEnemyDefeated);
             currentEnemy.transform.localPosition = randomPos;
+            staticEnemies.Add(currentEnemy);
+        }
+    }
+
+    public void DoReset()
+    {
+        for (int i = 0; i < movingEnemies.Count; i++)
+        {
+            movingEnemies[i].Respawn(Utilities.GetRandom2DPosWithingBounds(worldInfo.pBoundsMin, worldInfo.pBoundsMax));
+        }
+
+        for (int i = 0; i < staticEnemies.Count; i++)
+        {
+            staticEnemies[i].Respawn(Utilities.GetRandom2DPosWithingBounds(worldInfo.pBoundsMin, worldInfo.pBoundsMax));
         }
     }
 
