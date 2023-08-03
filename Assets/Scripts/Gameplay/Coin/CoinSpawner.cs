@@ -10,6 +10,15 @@ public class CoinSpawner : Singleton<CoinSpawner>, IReset
     Queue<Coin> inactiveCoins = new Queue<Coin>();
     List<Coin> activeCoins = new List<Coin>();
 
+    #region Unity
+
+    private void Start()
+    {
+        ResetGame.Instance.AddResetableListener(this);
+    }
+
+    #endregion
+
     #region Public
     public void SpawnCoin(Vector3 position)
     {

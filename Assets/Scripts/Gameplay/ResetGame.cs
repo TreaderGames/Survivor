@@ -1,25 +1,24 @@
-using UnityEngine;
-using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 
-public class ResetGame : MonoBehaviour
+public class ResetGame : Singleton<ResetGame>
 {
     List<IReset> resetAbles = new List<IReset>();
 
     #region Untiy
     private void Start()
     {
-        IEnumerable enumerable = FindObjectsOfType<MonoBehaviour>().OfType<IReset>();
-
-        foreach (IReset item in enumerable)
-        {
-            resetAbles.Add(item);
-        }
-
         PlayerHealthController.Instance.AddListener(HandlePlayerHealth);
     }
-    #endregion
+    #endregion    
+
+    #region Public
+
+    public void AddResetableListener(IReset reset)
+    {
+        resetAbles.Add(reset);
+    }
+
+#endregion
 
     #region Private
     private void ResetMatch()

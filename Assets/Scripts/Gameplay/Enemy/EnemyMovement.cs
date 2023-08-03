@@ -13,6 +13,12 @@ public class EnemyMovement : MonoBehaviour, IReset
     float currentDelta = 0;
 
     #region Unity
+
+    private void Start()
+    {
+        ResetGame.Instance.AddResetableListener(this);
+    }
+
     private void LateUpdate()
     {
         if(movingEnemies.Count > 0 && currentDelta > delayedStart)

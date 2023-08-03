@@ -12,6 +12,13 @@ public class EnemySpawner : MonoBehaviour, IReset
     List<EnemyBase> movingEnemies = new List<EnemyBase>();
     List<EnemyBase> staticEnemies = new List<EnemyBase>();
 
+    #region Unity
+    private void Start()
+    {
+        ResetGame.Instance.AddResetableListener(this);
+    }
+    #endregion
+
     #region Public
 
     public List<EnemyBase> SpawnMovingEnemies()
