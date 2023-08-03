@@ -14,7 +14,7 @@ public class UIGameInfo : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerHealthController.Instance.AddListener(HandleHealthUpdated);
+        PlayerHealthController.Instance?.RemoveListener(HandleHealthUpdated);
     }
 
     #endregion

@@ -430,6 +430,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5496769863939549964, guid: 522885cf1daa2e940b1f355d1e28ccb5, type: 3}
+      propertyPath: playerHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496769863939549964, guid: 522885cf1daa2e940b1f355d1e28ccb5, type: 3}
+      propertyPath: meleeHitDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522885cf1daa2e940b1f355d1e28ccb5, type: 3}
 --- !u!1001 &2981436575877370108
@@ -531,12 +539,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas-World
       objectReference: {fileID: 0}
+    - target: {fileID: 2981436575877370111, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
+      propertyPath: spawnStaticCount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5139417564423229464, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5139417564423229464, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371292809380719606, guid: 729c04df7945c0641b36009f1ed0faad, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

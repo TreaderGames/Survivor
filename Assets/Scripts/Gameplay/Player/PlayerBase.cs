@@ -20,6 +20,18 @@ public class PlayerBase : MonoBehaviour
         {
             PlayerHealthController.Instance.HitByBullet();
         }
+        else if (collision.gameObject.tag.Equals(GameTags.ENEMY_TAG))
+        {
+            PlayerHealthController.Instance.UpdateEnemyContract(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals(GameTags.ENEMY_TAG))
+        {
+            PlayerHealthController.Instance.UpdateEnemyContract(false);
+        }
     }
     #endregion    
 
