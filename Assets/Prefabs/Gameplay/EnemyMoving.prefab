@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4566524519528777311}
   - component: {fileID: 4566524519528777310}
   - component: {fileID: 2456745868622269764}
+  - component: {fileID: 5436935698356622797}
   m_Layer: 5
   m_Name: EnemyMoving
   m_TagString: Enemy
@@ -94,7 +95,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 40
 --- !u!50 &4566524519528777310
 Rigidbody2D:
   serializedVersion: 4
@@ -129,3 +130,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTouchingPlayer: 0
+--- !u!58 &5436935698356622797
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566524519528777304}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 50

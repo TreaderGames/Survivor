@@ -2,9 +2,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public enum BulletTarget
+    {
+        Player,
+        Enemy
+    }
+
     float currentDelta = 0;
     Vector3 currentDirection;
     string targetTag;
+
+    public BulletTarget pBulletTarget { get; set; }
 
     #region Unity
     private void Update()
@@ -14,9 +22,9 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals(targetTag))
+        if (collision.CompareTag(targetTag))
         {
-            currentDelta = GameConfig.bulletLife;
+            currentDelta = GameConfig.bulletLife; //Disable bullet
         }
     }
     #endregion
@@ -30,6 +38,7 @@ public class Bullet : MonoBehaviour
         gameObject.SetActive(true);
         transform.position = startingPos;
     }
+
     #endregion
 
     #region Private

@@ -16,11 +16,11 @@ public class PlayerBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals(GameTags.BULLT_TAG))
+        if (collision.CompareTag(GameTags.BULLT_TAG) && collision.GetComponent<Bullet>().pBulletTarget.Equals(Bullet.BulletTarget.Player))
         {
             PlayerHealthController.Instance.HitByBullet();
         }
-        else if (collision.gameObject.tag.Equals(GameTags.ENEMY_TAG))
+        else if (collision.CompareTag(GameTags.ENEMY_TAG))
         {
             PlayerHealthController.Instance.UpdateEnemyContract(true);
         }
@@ -28,7 +28,7 @@ public class PlayerBase : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals(GameTags.ENEMY_TAG))
+        if (collision.CompareTag(GameTags.ENEMY_TAG))
         {
             PlayerHealthController.Instance.UpdateEnemyContract(false);
         }

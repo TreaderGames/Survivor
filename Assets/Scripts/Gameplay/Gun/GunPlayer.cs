@@ -15,7 +15,7 @@ public class GunPlayer : Gun
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals(GameTags.ENEMY_TAG))
+        if (collision.CompareTag(GameTags.ENEMY_TAG))
         {
             currentTarget = collision.transform;
         }
@@ -38,7 +38,7 @@ public class GunPlayer : Gun
             yield return new WaitForSeconds(GameConfig.gunInterval);
             if (currentTarget != null)
             {
-                FireGun(currentTarget.position, GameTags.ENEMY_TAG);
+                FireGun(currentTarget.position, GameTags.ENEMY_TAG, Bullet.BulletTarget.Enemy);
             }
         }
     }

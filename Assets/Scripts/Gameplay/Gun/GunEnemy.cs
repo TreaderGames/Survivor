@@ -25,7 +25,7 @@ public class GunEnemy : Gun
         while(gameObject.activeInHierarchy)
         {
             yield return new WaitForSeconds(GameConfig.gunInterval);
-            FireGun(playerTransform.position, GameTags.PLAYER_TAG);
+            FireGun(playerTransform.position, GameTags.PLAYER_TAG, Bullet.BulletTarget.Player);
         }
     }
 
