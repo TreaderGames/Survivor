@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     float currentDelta = 0;
     Vector3 currentDirection;
+    string targetTag;
 
     #region Unity
     private void Update()
@@ -13,7 +14,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals(GameTags.PLAYER_TAG))
+        if (collision.gameObject.tag.Equals(targetTag))
         {
             currentDelta = GameConfig.bulletLife;
         }
@@ -21,9 +22,10 @@ public class Bullet : MonoBehaviour
     #endregion
 
     #region Public
-    public void Fire(Vector3 direction, Vector3 startingPos)
+    public void Fire(Vector3 direction, Vector3 startingPos, string inTargetTag)
     {
         currentDelta = 0;
+        targetTag = inTargetTag;
         currentDirection = direction;
         gameObject.SetActive(true);
         transform.position = startingPos;
