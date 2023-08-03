@@ -53,6 +53,7 @@ public class EnemySpawner : MonoBehaviour
     #region Callback
     private void HandleEnemyDefeated(EnemyBase enemyBase)
     {
+        CoinSpawner.Instance.SpawnCoin(enemyBase.transform.localPosition);
         enemyBase.Respawn(Utilities.GetRandom2DPosWithingBounds(worldInfo.pBoundsMin, worldInfo.pBoundsMax));
     }
     #endregion
