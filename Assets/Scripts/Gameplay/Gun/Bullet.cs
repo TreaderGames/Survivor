@@ -51,7 +51,6 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            Debug.Log("Bullet Update");
             gameObject.SetActive(false);
         }
     }

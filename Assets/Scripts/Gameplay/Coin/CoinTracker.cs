@@ -20,7 +20,7 @@ public class CoinTracker : Singleton<CoinTracker>
     private void OnDisable()
     {
         coinSpawner.RemoveCoinCollectedListener(HandleCoinCollected); 
-        PlayerHealthController.Instance.RemoveListener(HandlePlayerHealthUpdated);
+        PlayerHealthController.Instance?.RemoveListener(HandlePlayerHealthUpdated);
     }
 
     #endregion

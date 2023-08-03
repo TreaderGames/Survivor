@@ -86,10 +86,16 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
 
     private void UpdateEnemyContactHealth()
     {
+        int health;
         //Debug.Log("Enemy Contact Count: " + enemyContactCount);
         currentHealth = currentHealth - enemyContactCount;
         currentHealth = Mathf.Max(currentHealth, 0);
-        callbackHealthUpdated?.Invoke(currentHealth);
+        health = currentHealth;
+        if (currentHealth == 0)
+        {
+            HandlePlayerDeath();
+        }
+        callbackHealthUpdated?.Invoke(health);
     }    
     #endregion
 }
