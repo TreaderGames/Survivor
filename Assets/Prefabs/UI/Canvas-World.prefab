@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4048218995736031963, guid: 8f3264ef90f946c48814699564ddad6d, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6395268442017792598, guid: 8f3264ef90f946c48814699564ddad6d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

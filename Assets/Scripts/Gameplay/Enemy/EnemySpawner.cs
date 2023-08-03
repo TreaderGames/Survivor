@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
             randomPos = Utilities.GetRandom2DPosWithingBounds(worldInfo.pBoundsMin, worldInfo.pBoundsMax);
 
             currentEnemy.transform.localPosition = randomPos;
+            currentEnemy.AddEnemyDefeatedListener(HandleEnemyDefeated);
             movingEnemies.Add(currentEnemy);
         }
 
@@ -42,9 +43,17 @@ public class EnemySpawner : MonoBehaviour
             currentEnemy.gameObject.SetActive(true);
             randomPos = Utilities.GetRandom2DPosWithingBounds(worldInfo.pBoundsMin, worldInfo.pBoundsMax);
 
+            currentEnemy.AddEnemyDefeatedListener(HandleEnemyDefeated);
             currentEnemy.transform.localPosition = randomPos;
         }
     }
 
+    #endregion
+
+    #region Callback
+    private void HandleEnemyDefeated(EnemyBase enemyBase)
+    {
+        enemyBase.Respawn(Utilities.GetRandom2DPosWithingBounds(worldInfo.pBoundsMin, worldInfo.pBoundsMax));
+    }
     #endregion
 }
